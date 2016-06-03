@@ -1,0 +1,45 @@
+# Redux
+
+- First Principle: Everything that changes in the application is contained in a
+  Single object called the *state* or the *state tree*
+
+- Second Principle: State Tree is READ-ONLY, to change state, dispatch an action.
+  Action describes minimal amount of information to impact state.
+
+--  Components dispatch actions
+
+- Pure Functions do not have side effects (same arguments, same results)
+-- Some Redux functions must be pure
+
+- Impure Functions may call network, operate on DOM, etc...
+
+- UI most predictable when described as a pure function of application state
+
+- Redux says that application mutations are based on previous state and actions
+
+- Third Principle: To describe state mutations, use a REDUCER which is a pure
+  function that takes the previous state and the action and returns a new object
+  representing the new state
+
+- in Redux the *store* binds together the three principles
+-- It stores State
+-- It lets you dispatch actions
+
+- in redux we go out of our way to avoid Array mutations. This means no push or
+  pop or splice, since they all mutate the array. Instead we use concat(),
+  slice(), and the new ES6 ...spread
+
+- Reducer composition refers to abstracting complex reducers into smaller
+  simpler reducers to avoid bloat
+- Reducer composition also refers to combining multiple reducers into a single
+  parent reducer to allow for non-trivial apps
+
+- Presentational components are not concerned with functionality, only what a
+  component renders as. If a component has an onClick function, then it must
+  pass that function in as a prop
+
+- A Container component holds presentational components to pass data down the
+  app
+
+- Action Creators are useful for testing, for putting actions in multiple
+  components
