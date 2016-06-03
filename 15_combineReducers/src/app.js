@@ -1,8 +1,9 @@
 import expect from 'expect';
 import deepFreeze from 'deep-freeze';
-// const deepFreeze = require('deep-freeze');
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
+// This code is demonstrating a pattern of combining reducers to allow
+// Redux based apps to scale using combineReducers function
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -35,7 +36,48 @@ const todos = (state = [], action) => {
   }
 };
 
-const store = createStore(todos);
+const visibilityFilter = (
+  state = 'SHOW_ALL',
+  action
+) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter;
+    default:
+      return state;
+  }
+};
+
+// This code is identical to the commented code below it, except for it uses
+// new ES6 Obeject literal shorthand
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
+});
+
+/*
+const todoApp = combineReducers({
+  todos: todos,
+  visibilityFilter: visibilityFilter
+});
+*/
+
+/*
+const todoApp = (state = {}, action) => {
+  return {
+    todos: todos(
+      state.todos,
+      action
+    ),
+    visibilityFilter: visibilityFilter(
+      state.visibilityFilter,
+      action
+    )
+  };
+};
+*/
+
+const store = createStore(todoApp);
 
 console.log('initial state');
 console.log(store.getState());
@@ -63,13 +105,26 @@ console.log('current state');
 console.log(store.getState());
 console.log('----------');
 
-console.log('Dispatching ADD_TODO.');
+
+console.log('Dispatching TOGGLE_TODO.');
 store.dispatch({
-  type: 'ADD_TODO',
-  id: 1,
-  text: 'Learn React'
+  type: 'TOGGLE_TODO',
+  id: 0
 })
 
+console.log('current state');
+console.log(store.getState());
+console.log('----------');
+
+console.log('Dispatching SET_VISIBILITY_FILTER.');
+store.dispatch({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+});
+
+console.log('current state');
+console.log(store.getState());
+console.log('----------');
 
 const testAddTodo = () => {
   const stateBefore = [];

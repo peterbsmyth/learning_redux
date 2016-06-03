@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './src/composition_with_objects.js',
+  entry: './src/app.js',
   output: {
     path: __dirname,
-    filename: 'composition_with_objects.js'
+    filename: 'app.js'
   },
   module: {
     loaders: [{
