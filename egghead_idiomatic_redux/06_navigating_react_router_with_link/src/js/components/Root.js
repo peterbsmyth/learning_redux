@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router'
 import App from './App'
 
 
@@ -8,7 +8,7 @@ import App from './App'
 // optional, when theres no filter, we should show all
 const Root = ({ store }) => (
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/(:filter)" component={App} />
     </Router>
   </Provider>
