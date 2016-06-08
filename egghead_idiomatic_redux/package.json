@@ -14,12 +14,12 @@
     "17": "webpack-dev-server --config ./17_the_middleware_chain/config/webpack.config.js --hot --inline --progress",
     "18": "webpack-dev-server --config ./18_applying_redux_middleware/config/webpack.config.js --hot --inline --progress",
     "19": "webpack-dev-server --config ./19_updating_state_with_fetched_data/config/webpack.config.js --hot --inline --progress",
-    "20": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "21": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "22": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "23": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "24": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "25": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
+    "20": "webpack-dev-server --config ./20_refactoring_reducers/config/webpack.config.js --hot --inline --progress",
+    "21": "webpack-dev-server --config ./21_displaying_loading_indicators/config/webpack.config.js --hot --inline --progress",
+    "22": "webpack-dev-server --config ./22_dispatching_actions_asynchronously_with_thunks/config/webpack.config.js --hot --inline --progress",
+    "23": "webpack-dev-server --config ./23_avoiding_race_conditions_with_thunks/config/webpack.config.js --hot --inline --progress",
+    "24": "webpack-dev-server --config ./24_displaying_error_messages/config/webpack.config.js --hot --inline --progress",
+    "25": "webpack-dev-server --config ./25_creating_data_on_server/config/webpack.config.js --hot --inline --progress",
     "26": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
     "27": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -39,7 +39,8 @@
     "react-router": "^3.0.0-alpha.1",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
-    "redux-promise": "^0.5.3"
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",

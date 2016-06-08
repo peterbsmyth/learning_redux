@@ -1,0 +1,20 @@
+// since allIds, activeIds, and completedIds were all taking a filter and
+// returning similar reducers based on that filter, we can use createList to
+// remove three reducers and instead use it to return those reducers
+const createList = (filter) => {
+  return(state = [], action) => {
+    if (action.filter !== filter) {
+      return state
+    }
+    switch (action.type) {
+      case 'RECEIVE_TODOS':
+        return action.response.map(todo => todo.id)
+      default:
+        return state
+    }
+  }
+}
+
+export default createList
+
+export const getIds = (state) => state
