@@ -20,8 +20,8 @@
     "23": "webpack-dev-server --config ./23_avoiding_race_conditions_with_thunks/config/webpack.config.js --hot --inline --progress",
     "24": "webpack-dev-server --config ./24_displaying_error_messages/config/webpack.config.js --hot --inline --progress",
     "25": "webpack-dev-server --config ./25_creating_data_on_server/config/webpack.config.js --hot --inline --progress",
-    "26": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
-    "27": "webpack-dev-server --config ./08_using_withRouter_to_inject_into_connected_components/config/webpack.config.js --hot --inline --progress",
+    "26": "webpack-dev-server --config ./26_normalizing_api_responses_with_normalizr/config/webpack.config.js --hot --inline --progress",
+    "27": "webpack-dev-server --config ./27_updating_data_on_server/config/webpack.config.js --hot --inline --progress",
     "test": "echo \"Error: no test specified\" && exit 1",
     "06": "webpack-dev-server --config ./06_navigating_react_router_with_link/config/webpack.config.js --hot --inline --progress",
     "07": "webpack-dev-server --config ./07_filtering_state_with_router_params/config/webpack.config.js --hot --inline --progress",
@@ -33,6 +33,7 @@
   "dependencies": {
     "lodash": "^4.13.1",
     "node-uuid": "^1.4.7",
+    "normalizr": "^2.1.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
